@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Architects Daughter', cursive;
+}
+:root {
+    --verde: #97BF04;
+    --amarillo: #D2D904;
+    --crema: #F2A766;
+    --piel: #F2BB9B; 
+    --gris: #ECDCCD;
+    --rosa: #F24957;
+}
+/* HEADER */
+header {
+    height: 20%;
+    background-color: var(--rosa);
+}
+header > h2 {
+    font-size: 5rem;
+    text-shadow: var(--crema) 3px 3px 4px	
+    /* text-shadow: #EB29F2 15px -15px 22px 2px ; */
+}
+/* NAV */
+nav {
+    height: 10vh;
+    background: linear-gradient( var(--piel), var(--rosa))
+}
+
+div > a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    text-shadow: var(--gris) 3px 3px 4px;
+}
+a:hover {
+    border: 3px solid var(--rosa);
+    background-color: var(--crema);
+    text-shadow: var(--rosa) 3px 3px 4px;;
+}
+/* MAIN */
+main {
+    background-color: var(--gris)
+}
+
+/* MAIN INDEX */
+#map > iframe{
+    border: 2px solid var(--rosa);
+    border-radius: 30%;
+}
+/* MAIN JUGUETES - MEDICAMENTOS */
+
+
+/* FOOTER */
+footer {
+    background-color: rgb(243, 19, 131);
+}
