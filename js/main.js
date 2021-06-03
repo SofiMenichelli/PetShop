@@ -21,13 +21,14 @@ const app = Vue.createApp ({
     },
     methods: {
         toggleShow() {
-            this.isShow = !this.isShow
-            this.isShow ? this.descripcion = "Descripción" : this.descripcion = "Ocultar Descripción"
+                this.isShow = !this.isShow
+                this.isShow ? this.descripcion = "Descripción" : this.descripcion = "Ocultar Descripción"
+
         },
         stockShow(){
             this.producto.forEach(producto => {
                 if(producto.stock > 5) {
-
+                    
                 }
             })
         },

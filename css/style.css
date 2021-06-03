@@ -54,5 +54,5 @@ main {
 
 /* FOOTER */
 footer {
-    background-color: rgb(243, 19, 131);
+    background-color: var(--rosa);
 }
