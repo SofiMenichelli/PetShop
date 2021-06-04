@@ -28,20 +28,20 @@
         </nav>
         <main>
             <div class="container">
-                <form>
+                <form class="m-3">
                     <h3>Dejenos sus datos y nos comunicaremos con usted</h3>
-                    <fieldset> 
-                        <legend class="d-flex flex-column text-center"> Información para contactarlo:
-                            <input id="name" type="text" placeholder="Nombre y Apellido" required>
-                            <input id="name" type="text" placeholder="Teléfono" required>
-                            <input id="name" type="text" placeholder="Dirección" required>
-                            <input id="name" type="text" placeholder="Email" required>
-                            <input id="name" type="text" placeholder="¿Que Necesita?" required>
+                    <fieldset class="d-flex flex-column align-items-center"> 
+                        <legend class="d-flex flex-column m-3"> Información para contactarlo:
+                            <input class="text-center m-2" id="name" type="text" placeholder="Nombre y Apellido" required>
+                            <input class="text-center m-2" id="name" type="text" placeholder="Teléfono" required>
+                            <input class="text-center m-2" id="name" type="text" placeholder="Dirección" required>
+                            <input class="text-center m-2" id="name" type="text" placeholder="Email" required>
+                            <input class="text-center m-2" id="name" type="text" placeholder="¿Que Necesita?" required>
                         </legend>
                     </fieldset>
                     <fieldset>
                         <legend>
-                            <select name="animales" id="animales" required>
+                            <select class="text-center m-2" name="animales" id="animales" required>
                                 <option value="animales">Elija la mascota por la cual desea consultar</option>
                                 <option value="animales">Perro</option>
                                 <option value="animales">Gato</option>
@@ -52,9 +52,13 @@
                             </select>
                         </legend>
                     </fieldset>
+                    <fieldset>
+                        <input class="text-center m-2 d-inline" type="text" size="30" placeholder="Nombre de su mascota">
+                        <input class="text-center m-2 d-inline" type="text" size="50" placeholder="Si lo sabe, ingrese su edad">
+                    </fieldset>
 
 
-                    <button type="submit" @click="submit">Enviar</button>
+                    <button class="d-flex m-5 flex-column" type="submit" @click="submit">Enviar</button>
                 </form>
             </div>
         </main>

@@ -6,7 +6,9 @@ const app = Vue.createApp ({
             medicamentos:[],
             /* Boton Descripcion */
             descripcion: "Descripción...",
+            ocultar: "Ocultar Descripción",
             isShow: true,
+            carrito: [],
         }
     },
     created() {
@@ -16,27 +18,39 @@ const app = Vue.createApp ({
             this.productos = data.response 
             this.juguetes = this.productos.filter(producto => producto.tipo == "Juguete")
             this.medicamentos = this.productos.filter(producto => producto.tipo === "Medicamento")
+            
         })
         .catch(err => console.log(err.message))
+
+        JSON.parse(localStorage.getItem("carrito"))
     },
     methods: {
-        toggleShow() {
-                this.isShow = !this.isShow
-                this.isShow ? this.descripcion = "Descripción" : this.descripcion = "Ocultar Descripción"
-
-        },
-        stockShow(){
-            this.producto.forEach(producto => {
-                if(producto.stock > 5) {
-                    
-                }
-            })
-        },
         submit(){
             alert("Gracias por contactarse con nosotros, en breve le responderemos")
-        }
+        },
+        agregarCarritoM(medicamento){
+                let medicamentoFiltrado = this.medicamentos.findIndex(e => e._id == medicamento._id)
+                this.carrito.push(medicamento)
+                if (this.medicamentos[medicamentoFiltrado].stock > 0) {
+                    this.medicamentos[medicamentoFiltrado].stock -= 1
+                } else {
+                    alert("Disculpe no nos queda mas de este producto")
+                }
+            localStorage.setItem("carrito", JSON.stringify(this.carrito))
+            /* console.log(this.carrito.concat(JSON.parse(localStorage.getItem("carrito")))) */
+        },
+        agregarCarritoJ(juguete) {
+                let jugueteFiltrado = this.juguetes.findIndex(e => e._id == juguete._id)
+                this.carrito.push(juguete)
+                if(this.juguetes[jugueteFiltrado].stock > 0) {
+                    this.juguetes[jugueteFiltrado].stock -= 1
+                } else {
+                    alert("Disculpe no nos queda mas de este producto")
+                }
+            /* localStorage.setItem("carrito", JSON.stringify(this.carrito)) */
+        },
     },
-    computed: {
+    computed: { 
 
     }
 })

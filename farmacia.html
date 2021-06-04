@@ -27,20 +27,54 @@
             </div>
         </nav>
         <main>
-            <div class="container d-flex flex-wrap justify-content-around">
-                <div v-for="medicamento in medicamentos" class="card mt-5" style="width: 25rem; height: 40rem;">
-                    <img class="card-img-top" :src="medicamento.imagen" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{medicamento.nombre}}</h5>
-                        <p>${{medicamento.precio}}</p>
-                        <button class="boton" :id="medicamento._id" v-if="isShow" v-text="descripcion" @click="toggleShow()"></button>
-                        <template v-else>
-                            <div v-show="!isShow">
-                                <button class="" v-text="descripcion" @click="toggleShow()"></button>
-                                <p class="card-text" style="overflow:auto">{{medicamento.descripcion}}</p>
-                            </div>
-                        </template>
-                        <a href="#" class="btn-secondary d-block mt-3">Agregar al carrito</a>
+            <div>
+                <table>
+                    <thead v-show="carrito.length > 0">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in carrito">
+                            <td>{{item.nombre}}</td>
+                            <td>{{}}</td>
+                            <td>${{item.precio}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="fondo">
+                <!-- &#128722 ---Dibuja un carrito -->
+                <div id="container" v-for="medicamento in medicamentos">
+                    <!-- Start	Product details -->
+                    <div class="product-details">
+                        <!-- 	Product Name -->
+                        <h1>{{medicamento.nombre}}</h1>
+
+                        <!-- The most important information about the product -->
+                        <p class="information">{{medicamento.descripcion}}</p>
+                        <!-- 		Control -->
+                        <div class="control">
+                            <!-- Start Button buying -->
+                            <button class="btn" :disabled="medicamento.stock === 0" @click="agregarCarritoM(medicamento)">
+                                <!-- 		the Price -->
+                                <span class="price">${{medicamento.precio}}</span>
+                                <!-- 		Buy Now / ADD to Cart-->
+                                <span class="buy">Agregar al Carrito</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 	End	Product details   --
+                                <!-- 	Start product image & Information -->
+                    <div class="product-image">
+                        <img :src="medicamento.imagen" alt="medicamento.imagen">
+                        <!-- End Button buying -->
+                        <div>
+                            <p class="ultimos text-center">Stock Disponible: {{medicamento.stock}}</p>
+                            <p class="ultimos text-center" v-show="medicamento.stock<=5">📢Ultimas Unidades📢</p>
+                        </div>
                     </div>
                 </div>
             </div>

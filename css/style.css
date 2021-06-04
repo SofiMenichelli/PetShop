@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web');
 *{
     padding: 0;
     margin: 0;
@@ -12,20 +13,27 @@
     --gris: #ECDCCD;
     --rosa: #F24957;
 }
+
 /* HEADER */
 header {
     height: 20%;
-    background-color: var(--rosa);
+    background-color: #f24957ab;
 }
 header > h2 {
     font-size: 5rem;
-    text-shadow: var(--crema) 3px 3px 4px	
-    /* text-shadow: #EB29F2 15px -15px 22px 2px ; */
+    text-shadow: 0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px #fff,
+    0 0 40px #f158dd,
+    0 0 70px #e673d6,
+    0 0 80px #f380e4,
+    0 0 100px #ff5be9,
+    0 0 150px #f332f3;
 }
 /* NAV */
 nav {
     height: 10vh;
-    background: linear-gradient( var(--piel), var(--rosa))
+    background:  #f85f6cab
 }
 
 div > a {
@@ -35,14 +43,22 @@ div > a {
     text-shadow: var(--gris) 3px 3px 4px;
 }
 a:hover {
-    border: 3px solid var(--rosa);
-    background-color: var(--crema);
-    text-shadow: var(--rosa) 3px 3px 4px;;
+    border: 3px solid var(--crema);
+    background-color: var(--piel);
+    /* text-shadow: var(--rosa) 3px 3px 4px;; */
+}
+/* CARRITO */
+#carrito {
+	position: sticky;
+/* 	top: 30vh;
+	right: 0; */
 }
 /* MAIN */
-main {
-    background-color: var(--gris)
-}
+/* .fondo {
+	background-image: url("../img/colorido-pata-de-perro-imprimir-marco-frontera-sobre-fondo-blanco-pk58k6.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+} */
 
 /* MAIN INDEX */
 #map > iframe{
@@ -50,9 +66,110 @@ main {
     border-radius: 30%;
 }
 /* MAIN JUGUETES - MEDICAMENTOS */
+.ultimos {
+    background-color: rgb(240, 76, 76);
+	border-radius: 5%;
+}
 
+/* CARD */
+
+#container{
+	box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+	background: rgba(255, 255, 255, 0.90);
+	text-align: center;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 5em auto;
+	height: 350px;
+	width: 700px;
+}
+/* 	Product details  */
+.product-details {
+	position: relative;
+	text-align: left;
+	overflow: hidden;
+	padding: 30px;
+	height: 100%;
+	float: left;
+	width: 60%;
+}
+/* 	Product Name */
+#container .product-details h1{
+	font-family: 'Old Standard TT', serif;
+    text-align: center;
+	position: relative;
+	font-size: 25px;
+	color: #344055;
+	margin: 0;
+}
+
+/* The most important information about the product */
+#container .product-details > p {
+	font-family: 'Farsan', cursive;
+	text-align: center;
+	font-size: 20px;
+	color: #7d7d7d;
+}
+/* control */
+.control{
+	position: absolute;
+	bottom: 2%;
+	left: 20%;
+}
+/* the Button */
+.btn {
+	transform: translateY(0px);
+	transition: 0.3s linear;
+	background: var(--rosa);
+	border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	color: #eee;
+	padding: 0;
+	margin: 0;
+}
+.btn:hover{transform: translateY(-4px);}
+
+.btn span {
+	font-family: 'Farsan', cursive;
+	transition: transform 0.3s;
+	display: inline-block;
+    padding: 10px 20px;
+	font-size: 1.2em;
+	margin:0;
+	
+}
+/* shopping cart icon */
+.btn .price, .shopping-cart{
+	background: #333;
+	border: 0;
+	margin: 0;
+}
+
+.btn .price {
+	transform: translateX(-10%); padding-right: 15px;
+}
+
+/* buy */
+.btn .buy {z-index: 3; font-weight: bolder;}
+.btn:hover .price {transform: translateX(-110%);}
+/* .btn:hover .shopping-cart {transform: translateX(0%);} */
+
+/* product image  */
+.product-image {
+	transition: all 0.3s ease-out;
+	position: relative;
+	overflow: hidden;
+/* 	height: 100%; */
+	width: 40%;
+}
+
+#container img {width: 100%;height: 100%;}
 
 /* FOOTER */
 footer {
-    background-color: var(--rosa);
+    background-color: #f24957ab;
 }

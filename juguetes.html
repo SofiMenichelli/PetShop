@@ -15,7 +15,7 @@
             <h2 class="flex-wrap">¡PetShop Franco!</h2>
             <img class="rounded-lg" src="./img/logo2.jpg" alt="logo">
         </header>
-        <nav class="d-flex flex-row align-items-center flex-wrap">
+        <nav class="d-flex flex-row align-items-center">
             <div class="container-fluid d-flex justify-content-around">
                 <a href="./index.html">Inicio</a>
                 <a href="./juguetes.html">Juguetes</a>
@@ -27,21 +27,51 @@
             </div>
         </nav>
         <main>
-            <div class="container d-flex flex-wrap justify-content-around">
-                <div v-for="juguete in juguetes" class="card mt-5" style="width: 25rem; height: 40rem;">
-                    <img class="card-img-top" :src="juguete.imagen" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{juguete.nombre}}</h5>
-                        <p>${{juguete.precio}}</p>
-                        <button class="boton" :id="juguete._id" v-if="isShow" v-text="descripcion"
-                            @click="toggleShow()"></button>
-                        <template v-else>
-                            <div v-show="!isShow">
-                                <button class="" v-text="descripcion" @click="toggleShow()"></button>
-                                <p class="card-text" style="overflow:auto">{{juguete.descripcion}}</p>
-                            </div>
-                        </template>
-                        <a href="#" class="btn-secondary d-block mt-3">Agregar al carrito</a>
+            <div id="carrito">
+                <table v-for="item in carrito" >
+                    <h3 v-show="carrito.length > 0">Productos en Carrito de Compras</h3>
+                    <thead >
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{item.nombre}}</td>
+                            <td>{{}}</td>
+                            <td>${{item.precio}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="container" v-for="juguete in juguetes">
+                <!-- Start	Product details -->
+                <div class="product-details">
+                    <!-- 	Product Name -->
+                    <h1>{{juguete.nombre}}</h1>
+                    <!-- The most important information about the product -->
+                    <p class="information">{{juguete.descripcion}}</p>
+                    <!-- 		Control -->
+                    <div class="control">
+                        <!-- Start Button buying -->
+                        <button class="btn" :disabled="juguete.stock === 0" @click="agregarCarritoJ(juguete)">
+                            <!-- 		the Price -->
+                            <span class="price">${{juguete.precio}}</span>
+                            <!-- 		Buy Now / ADD to Cart-->
+                            <span class="buy">Agregar al Carrito</span>
+                        </button>
+                </div>
+                </div>
+                <!-- 	End	Product details   --
+                <!-- 	Start product image & Information -->
+                <div class="product-image">
+                    <img :src="juguete.imagen" alt="juguete.imagen">
+                    <!-- End Button buying -->
+                    <div>
+                        <p class="ultimos text-center">Stock Disponible: {{juguete.stock}}</p>
+                        <p class="ultimos" v-show="juguete.stock<=5">📢Ultimas Unidades📢</p>
                     </div>
                 </div>
             </div>
