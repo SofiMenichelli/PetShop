@@ -1,12 +1,12 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap'); */
 @import url('https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Architects Daughter', cursive;
 }
 :root {
-    --verde: #97BF04;
+	--verde: #97BF04;
     --amarillo: #D2D904;
     --crema: #F2A766;
     --piel: #F2BB9B; 
@@ -16,11 +16,13 @@
 
 /* HEADER */
 header {
-    height: 20%;
+	height: 20%;
     background-color: #f24957ab;
 }
 header > h2 {
+	font-family: 'Indie Flower', cursive;
     font-size: 5rem;
+	font-weight: bold;
     text-shadow: 0 0 10px #fff,
     0 0 20px #fff,
     0 0 30px #fff,
@@ -30,29 +32,48 @@ header > h2 {
     0 0 100px #ff5be9,
     0 0 150px #f332f3;
 }
+.logo {
+	border: 3px solid #f158dd;
+	border-radius: 5rem;
+}
 /* NAV */
 nav {
-    height: 10vh;
-    background:  #f85f6cab
+	height: 8vh;
+	font-size: 3rem;
+	font-weight: bold;
+	font-family: 'Indie Flower', cursive;
 }
 
 div > a {
-    text-decoration: none;
+	text-decoration: none;
     font-size: 1.5rem;
     padding: 0.5rem;
     text-shadow: var(--gris) 3px 3px 4px;
 }
 a:hover {
-    border: 3px solid var(--crema);
+	border: 3px solid var(--crema);
     background-color: var(--piel);
     /* text-shadow: var(--rosa) 3px 3px 4px;; */
 }
 /* CARRITO */
 #carrito {
+	width: 30vh;
+	height: 20vh;
+	overflow: auto;
 	position: sticky;
-/* 	top: 30vh;
-	right: 0; */
+	left: 90vw;
+	top: 15vh;
+	color: rgb(226, 67, 67);
+	font-size: 12px;
 }
+/* .wa {
+	position:sticky;
+	bottom: 10vh;
+	right: 10vh;
+	width: 5vh;
+	height: 5vh;
+	background-image: url(../img/whats.png);
+} */
 /* MAIN */
 /* .fondo {
 	background-image: url("../img/colorido-pata-de-perro-imprimir-marco-frontera-sobre-fondo-blanco-pk58k6.jpg");
@@ -62,15 +83,17 @@ a:hover {
 
 /* MAIN INDEX */
 #map > iframe{
-    border: 2px solid var(--rosa);
+	border: 2px solid var(--rosa);
     border-radius: 30%;
 }
 /* MAIN JUGUETES - MEDICAMENTOS */
 .ultimos {
-    background-color: rgb(240, 76, 76);
+	background-color: rgb(240, 76, 76);
 	border-radius: 5%;
 }
-
+main {
+	font-family: 'Architects Daughter', cursive;
+}
 /* CARD */
 
 #container{
@@ -169,7 +192,100 @@ a:hover {
 
 #container img {width: 100%;height: 100%;}
 
-/* FOOTER */
+/* Contact Input File */
+
+.containerForm {
+	margin: 2rem;
+	margin: 0 5rem;
+}
+.h3contacto {
+	text-align: center;
+	margin: 10px;
+	font-family: 'Indie Flower', cursive;
+	font-weight: bold;
+	text-decoration-line: underline;
+}
+.form {
+	font-family: 'Indie Flower', cursive;
+	font-size: 20px;
+	padding: 2rem;
+}
+.cliente {
+	width: 60%;
+	background-color: rgb(248, 204, 204);
+	border-radius: 20px;
+}
+
+label > input {
+	border: 3px solid rgb(251, 163, 251);
+	border-radius: 20px;
+}
+
+.mascotaForm {
+	width: 60%;
+	background-color: rgb(236, 194, 194);
+	margin: 1rem; 
+	padding: 2rem;
+	border-radius: 20px;
+}
+ .mascotaForm select {
+	width: 25vw;
+	border: 3px solid rgb(251, 163, 251);
+	border-radius: 2rem;
+	padding: 0.5rem;
+	font-size: 20px;
+	text-align: center;
+}
+ 
+.uploadMascota{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.inputFile {
+	width: 15vw;
+	height: 6vh;
+	border: 6px solid rgb(251, 163, 251);
+	border-radius: 2rem;
+}
+.inputFileName {
+	font-family: 'Indie Flower', cursive;
+	font-size: 20px;
+	width: 40vw;
+}
+.inputFileBtn {
+	position: relative;
+	left: 12vw;
+}
+#mascotaInput {
+	width: 50%;
+	height: 100%;
+	position: relative;
+	left: 0;
+	top: 0;
+	opacity: 0;
+}
+.imgPrev {
+	margin-left: 2vw;
+	width: 10vw;
+	border: 6px solid rgb(251, 163, 251);
+	border-radius: 2rem;
+}
+button {
+	background-color: rgb(238, 105, 127);
+	border: 3px solid rgb(251, 163, 251);
+	border-radius: 2rem;
+	padding: 0.5rem
+}
+
+
+/* Footer */
 footer {
+	height: 10vh;
+	margin-top: 2vh;
     background-color: #f24957ab;
+	font-family: 'Indie Flower', cursive;
+	font-weight: bold;
 }

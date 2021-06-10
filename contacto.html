@@ -8,58 +8,76 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/c4b071bb59.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="app" class="d-flex flex-column justify-content-evenly">
+    <div id="app" class="d-flex flex-column">
         <header class="d-flex justify-content-evenly align-items-center">
             <h2 class="flex-wrap">¡PetShop Franco!</h2>
-            <img class="rounded-lg" src="./img/logo2.jpg" alt="logo">
+            <img class="logo" src="./img/logo3.jpg" alt="logo">
+            <nav class="d-flex flex-row align-items-center flex-wrap">
+                <div class="container-fluid d-flex justify-content-around">
+                    <a href="./index.html">Inicio</a>
+                    <a href="./juguetes.html">Juguetes</a>
+                    <a href="./farmacia.html">Farmacia</a>
+                    <a href="./contacto.html">Contacto</a>
+                    <a class="navbar-brand" href="./carrito.html">
+                        <img src="./img/carrito_vacio.png" width="50" height="50" alt="carrito">
+                    </a>
+                </div>
+            </nav>
         </header>
-        <nav class="d-flex flex-row align-items-center flex-wrap">
-            <div class="container-fluid d-flex justify-content-around">
-                <a href="./index.html">Inicio</a>
-                <a href="./juguetes.html">Juguetes</a>
-                <a href="./farmacia.html">Farmacia</a>
-                <a href="./contacto.html">Contacto</a>
-                <a class="navbar-brand" href="./carrito.html">
-                    <img src="./img/carrito_vacio.png" width="50" height="50" alt="carrito">
-                </a>
-            </div>
-        </nav>
         <main>
-            <div class="container">
-                <form class="m-3">
-                    <h3>Dejenos sus datos y nos comunicaremos con usted</h3>
-                    <fieldset class="d-flex flex-column align-items-center"> 
-                        <legend class="d-flex flex-column m-3"> Información para contactarlo:
-                            <input class="text-center m-2" id="name" type="text" placeholder="Nombre y Apellido" required>
-                            <input class="text-center m-2" id="name" type="text" placeholder="Teléfono" required>
-                            <input class="text-center m-2" id="name" type="text" placeholder="Dirección" required>
-                            <input class="text-center m-2" id="name" type="text" placeholder="Email" required>
-                            <input class="text-center m-2" id="name" type="text" placeholder="¿Que Necesita?" required>
+            <h3 class="h3contacto">Dejenos sus datos y nos comunicaremos con usted</h3>
+            <div class="aling-items-center containerForm">
+                <form class=" d-flex align-items-center flex-row justify-content-evenly" >
+                    <fieldset class="cliente"> 
+                        <legend class="m-3 align-items-center text-center flex-wrap"> Información de contacto:
+                            <label class="m-3" for="name">Nombre y Apellido: 👥
+                            <input class="text-center m-2" id="name" type="text" placeholder="Marisa Spirito" required></label>
+                            <label class="m-3" for="telefono">Telefono / Celular: ☎📞
+                            <input class="text-center m-2" id="telefono" type="text" placeholder="291-5896324" required></label>
+                            <label class="m-3" for="direccion">Direccion: 🏡
+                            <input class="text-center m-2" id="direccion" type="text" placeholder="Madagascar 845"></label>
+                            <label class="m-4" for="email">eMail: 📧
+                            <input class="text-center m-2" id="email" type="text" placeholder="marisa2021@mail.com.ar" required></label>
+                            <label class="m-3" for="consulta">¡Ingrese su consulta! 😄
+                            <input class="text-center m-2" id="consulta" type="text" style="height:20vh;" placeholder="¿Que Necesita?" required></label>
                         </legend>
                     </fieldset>
-                    <fieldset>
-                        <legend>
-                            <select class="text-center m-2" name="animales" id="animales" required>
-                                <option value="animales">Elija la mascota por la cual desea consultar</option>
-                                <option value="animales">Perro</option>
-                                <option value="animales">Gato</option>
-                                <option value="animales">Aves</option>
-                                <option value="animales">Peces</option>
-                                <option value="animales">Roedores</option>
-                                <option value="animales">Otros</option>
-                            </select>
-                        </legend>
+                    <fieldset class="d-flex align-items-center flex-column mascotaForm">
+                        <select class="text-center" name="animales" id="animales" required>
+                            <option value="animales">Elija Su Mascota 🐾</option>
+                            <option value="animales">Perro 🐶</option>
+                            <option value="animales">Gato 🐱</option>
+                            <option value="animales">Aves 🐤</option>
+                            <option value="animales">Peces 🐠</option>
+                            <option value="animales">Roedores 🐹</option>
+                            <option value="animales">Otros 🐰🐴🐣</option>
+                        </select>                
+                        <div class="datosMascota">
+                            <label class="d-flex align-items-center m-3" for="nombreMascota">Nombre de Su Mascota: 🐾
+                                <input id="nombreMascota" class="text-center" type="text" size="10" placeholder="Simba">
+                            </label>
+                            <label class="d-flex align-items-center m-3"  for="edad">Edad: 
+                                <input id="edad" class="text-center" type="text" size="28" placeholder="5">
+                            </label>
+                        </div>
+                        <div class="uploadMascota  d-flex flex-row">
+                            <div class="inputFile">
+                                <p class="inputFileName"> Selecciona una Imagen</p>
+                                <button type="button" class="inputFileBtn">
+                                    <i class="fas fa-upload"></i>
+                                </button>
+                                <input type="file" name="mascota" id="mascotaInput">                            </div>
+                            <img src=" ./img/logo1.png" alt="mascota" class="imgPrev"></img>
+                        </div>
+                        <button class="m-2" type="submit" @click="submit">Enviar Formulario</button>
                     </fieldset>
-                    <fieldset>
-                        <input class="text-center m-2 d-inline" type="text" size="30" placeholder="Nombre de su mascota">
-                        <input class="text-center m-2 d-inline" type="text" size="50" placeholder="Si lo sabe, ingrese su edad">
-                    </fieldset>
-
-
-                    <button class="d-flex m-5 flex-column" type="submit" @click="submit">Enviar</button>
                 </form>
+            </div>
+            <div class="wa">
+            
             </div>
         </main>
         <footer class="d-flex flex-column align-items-center mb-0">

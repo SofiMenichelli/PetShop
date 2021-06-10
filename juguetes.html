@@ -28,8 +28,8 @@
         </nav>
         <main>
             <div id="carrito">
-                <table v-for="item in carrito" >
-                    <h3 v-show="carrito.length > 0">Productos en Carrito de Compras</h3>
+                <table>
+                    <!-- <h6 v-show="carrito.length > 0">Productos en Carrito de Compras</h6> -->
                     <thead >
                         <tr>
                             <th>Nombre</th>
@@ -38,7 +38,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr  v-for="item in carrito">
                             <td>{{item.nombre}}</td>
                             <td>{{}}</td>
                             <td>${{item.precio}}</td>
@@ -74,6 +74,9 @@
                         <p class="ultimos" v-show="juguete.stock<=5">📢Ultimas Unidades📢</p>
                     </div>
                 </div>
+            </div>
+            <div class="wa">
+
             </div>
         </main>
         <footer class="d-flex flex-column align-items-center">

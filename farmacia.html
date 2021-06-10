@@ -15,7 +15,7 @@
             <h2 class="flex-wrap">¡PetShop Franco!</h2>
             <img class="rounded-lg" src="./img/logo2.jpg" alt="logo">
         </header>
-        <nav class="d-flex flex-row align-items-center flex-wrap">
+        <nav class="d-flex align-items-center flex-wrap">
             <div class="container-fluid d-flex justify-content-around">
                 <a href="./index.html">Inicio</a>
                 <a href="./juguetes.html">Juguetes</a>
@@ -26,10 +26,11 @@
                 </a>
             </div>
         </nav>
-        <main>
-            <div>
+        <main class="d-flex flex-wrap">
+            <div id="carrito">
                 <table>
-                    <thead v-show="carrito.length > 0">
+                    <!-- <h6 v-show="carrito.length > 0">Productos en Carrito de Compras</h6> -->
+                    <thead>
                         <tr>
                             <th>Nombre</th>
                             <th>Cantidad</th>
@@ -37,7 +38,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="item in carrito">
+                        <tr  v-for="item in carrito">
                             <td>{{item.nombre}}</td>
                             <td>{{}}</td>
                             <td>${{item.precio}}</td>
@@ -77,6 +78,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="wa">
+
             </div>
         </main>
         <footer class="d-flex flex-column align-items-center">

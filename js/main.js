@@ -55,3 +55,20 @@ const app = Vue.createApp ({
     }
 })
 app.mount("#app")
+//Input File
+const mascotaInput = document.querySelector('#mascotaInput');
+const mascotaName = document.querySelector('.inputFileName');
+const imagePreview = document.querySelector('.imgPrev');
+
+mascotaInput.addEventListener('change', e=> {
+    let input = e.currentTarget;
+    let fileName = input.files[0].name;
+    mascotaName.innerText = `File: ${fileName}`;
+
+    const fileReader = new FileReader();
+    fileReader.addEventListener('load', e=> {
+        let imageData = e.target.result;
+        imgPrev.setAttribute('src', imageData);
+    })
+    fileReader.readAsDataURL(input.files[0]);
+})
