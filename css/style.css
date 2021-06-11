@@ -4,6 +4,7 @@
 *{
     padding: 0;
     margin: 0;
+	box-sizing: border-box;
 }
 :root {
 	--verde: #97BF04;
@@ -62,24 +63,11 @@ a:hover {
 	overflow: auto;
 	position: sticky;
 	left: 90vw;
-	top: 15vh;
+	top: 10vh;
 	color: rgb(226, 67, 67);
 	font-size: 12px;
 }
-/* .wa {
-	position:sticky;
-	bottom: 10vh;
-	right: 10vh;
-	width: 5vh;
-	height: 5vh;
-	background-image: url(../img/whats.png);
-} */
-/* MAIN */
-/* .fondo {
-	background-image: url("../img/colorido-pata-de-perro-imprimir-marco-frontera-sobre-fondo-blanco-pk58k6.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-} */
+
 
 /* MAIN INDEX */
 #map > iframe{
@@ -227,6 +215,7 @@ label > input {
 	margin: 1rem; 
 	padding: 2rem;
 	border-radius: 20px;
+	font-size: 20px
 }
  .mascotaForm select {
 	width: 25vw;
@@ -260,7 +249,7 @@ label > input {
 	left: 12vw;
 }
 #mascotaInput {
-	width: 50%;
+	width: 100%;
 	height: 100%;
 	position: relative;
 	left: 0;
@@ -279,13 +268,40 @@ button {
 	border-radius: 2rem;
 	padding: 0.5rem
 }
+/* Boton WhatsApp */
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:30px;
+	right:50px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  	font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  	z-index:100;
+}
+.float:hover {
+	text-decoration: none;
+	color: #fbfbfb;
+    background-color:rgb(31, 236, 12);
+}
 
+.my-float{
+	margin-top:12px;
+}
 
 /* Footer */
 footer {
-	height: 10vh;
+	max-height: 12vh;
 	margin-top: 2vh;
     background-color: #f24957ab;
 	font-family: 'Indie Flower', cursive;
 	font-weight: bold;
 }
+footer > p {
+	font-size: 2rem;
+}
+
