@@ -26,19 +26,20 @@
                 </div>
             </nav>
         </header>
-        <main class="d-flex flex-wrap">
+        <main>
             <div id="carrito">
                 <table>
                     <!-- <h6 v-show="carrito.length > 0">Productos en Carrito de Compras</h6> -->
                     <thead>
                         <tr>
-                            <th>Nombre</th>
+                            <th colspan="2">Nombre</th>
                             <th>Cantidad</th>
                             <th>Precio</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr  v-for="item in carrito">
+                            <td><img :src="item.imagen" alt=""></td>
                             <td>{{item.nombre}}</td>
                             <td>{{}}</td>
                             <td>${{item.precio}}</td>
@@ -46,42 +47,37 @@
                     </tbody>
                 </table>
             </div>
-            <div class="fondo">
-                <!-- &#128722 ---Dibuja un carrito -->
-                <div id="container" v-for="medicamento in medicamentos">
-                    <!-- Start	Product details -->
-                    <div class="product-details">
-                        <!-- 	Product Name -->
-                        <h1>{{medicamento.nombre}}</h1>
+            <div id="container" v-for="medicamento in medicamentos">
+                <!-- Start	Product details -->
+                <div class="product-details">
+                    <!-- 	Product Name -->
+                    <h1>{{medicamento.nombre}}</h1>
 
-                        <!-- The most important information about the product -->
-                        <p class="information">{{medicamento.descripcion}}</p>
-                        <!-- 		Control -->
-                        <div class="control">
-                            <!-- Start Button buying -->
-                            <button class="btn" :disabled="medicamento.stock === 0" @click="agregarCarritoM(medicamento)">
-                                <!-- 		the Price -->
-                                <span class="price">${{medicamento.precio}}</span>
-                                <!-- 		Buy Now / ADD to Cart-->
-                                <span class="buy">Agregar al Carrito</span>
-                            </button>
-                        </div>
+                    <!-- The most important information about the product -->
+                    <p class="information">{{medicamento.descripcion}}</p>
+                    <!-- 		Control -->
+                    <div class="control">
+                        <!-- Start Button buying -->
+                        <button class="btn" :disabled="medicamento.stock === 0" @click="agregarCarritoM(medicamento)">
+                            <!-- 		the Price -->
+                            <span class="price">${{medicamento.precio}}</span>
+                            <!-- 		Buy Now / ADD to Cart-->
+                            <span class="buy">Agregar al Carrito</span>
+                        </button>
                     </div>
-                    <!-- 	End	Product details   --
-                                <!-- 	Start product image & Information -->
-                    <div class="product-image">
-                        <img :src="medicamento.imagen" alt="medicamento.imagen">
-                        <!-- End Button buying -->
-                        <div>
-                            <p class="ultimos text-center">Stock Disponible: {{medicamento.stock}}</p>
-                            <p class="ultimos text-center" v-show="medicamento.stock<=5">📢Ultimas Unidades📢</p>
-                        </div>
+                </div>
+                <!-- 	End	Product details   --
+                            <!-- 	Start product image & Information -->
+                <div class="product-image">
+                    <img :src="medicamento.imagen" alt="medicamento.imagen">
+                    <!-- End Button buying -->
+                    <div>
+                        <p class="ultimos text-center">Stock Disponible: {{medicamento.stock}}</p>
+                        <p class="ultimos text-center" v-show="medicamento.stock<=5">📢Ultimas Unidades📢</p>
                     </div>
                 </div>
             </div>
-            <div class="wa">
-
-            </div>
+            
         </main>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <a href="https://api.whatsapp.com/send?phone=542915205427&text=Hola%20Pet%20Shop%20Franco!" class="float"
