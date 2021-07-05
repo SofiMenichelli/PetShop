@@ -9,14 +9,30 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/c4b071bb59.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous">
+        </script>
+    
+    <script>
+        $(document).ready(function () {
+            $('#menu_on').click(function () { // Al hacer click...
+                $('body').toggleClass('visible_menu'); // Añadimos o eliminamos la clase 'visible_menu' al body
+            })
+        });
+    </script>
 </head>
 <body>
     <div id="app" class="d-flex flex-column">
-        <header class="d-flex justify-content-evenly align-items-center">
+        <header class="d-flex justify-content-evenly align-items-center flex-row flex-wrap">
             <h2 class="flex-wrap">¡PetShop Franco!</h2>
-            <img class="logo" src="./img/logo3.jpg" alt="logo">
-            <nav class="d-flex flex-row align-items-center flex-wrap">
-                <div class="container-fluid d-flex justify-content-around">
+            <img class="logo sm-1" src="./img/logo3.jpg" alt="logo">
+            <a href="#" id="menu_on">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <nav class="">
+                <ul class="">
                     <a href="./index.html">Inicio</a>
                     <a href="./juguetes.html">Juguetes</a>
                     <a href="./farmacia.html">Farmacia</a>
@@ -24,15 +40,15 @@
                     <a class="navbar-brand" href="./carrito.html">
                         <img src="./img/carrito_vacio.png" width="50" height="50" alt="carrito">
                     </a>
-                </div>
+                </ul>
             </nav>
         </header>
         <main>
             <h3 class="h3contacto m-5">Dejenos sus datos y nos comunicaremos con usted</h3>
-            <div class="aling-items-center containerForm">
-                <form  action="https://formspree.io/f/xzbkjprk" method="POST" class=" d-flex align-items-center flex-row justify-content-evenly" >
+            <div class="d-flex flex-column flex-wrap aling-items-center containerForm">
+                <form  action="https://formspree.io/f/xzbkjprk" method="POST" class=" d-flex align-items-center flex-row flex-wrap" >
                     <fieldset class="cliente"> 
-                        <legend class="m-3 align-items-center text-center flex-wrap"> Información de contacto:
+                        <legend class="d-flex align-items-center text-center flex-wrap"> Información de contacto:
                             <label class="m-3" for="name">Nombre y Apellido: 👥
                             <input class="text-center m-2" id="name" type="text" placeholder="Marisa Spirito" required></label>
                             <label class="m-3" for="telefono">Telefono / Celular: ☎📞
@@ -45,7 +61,7 @@
                             <input class="text-center m-2" id="consulta" type="text" style="height:20vh;" placeholder="¿Que Necesita?" required></label>
                         </legend>
                     </fieldset>
-                    <fieldset class="d-flex align-items-center flex-column mascotaForm">
+                    <fieldset class="d-flex align-items-center flex-column flex-wrap mascotaForm">
                         <select class="text-center" name="animales" id="animales">
                             <option value="animales" selected>Elija Su Mascota 🐾</option>
                             <option value="animales">Perro 🐶</option>
@@ -56,14 +72,14 @@
                             <option value="animales">Otros 🐰🐴🐣</option>
                         </select>                
                         <div class="datosMascota">
-                            <label class="d-flex align-items-center m-3" for="nombreMascota">Nombre de Su Mascota: 🐾
+                            <label class="d-flex align-items-center" for="nombreMascota">Nombre de Su Mascota: 🐾
                                 <input id="nombreMascota" class="text-center" type="text" size="10" placeholder="Simba">
                             </label>
-                            <label class="d-flex align-items-center m-3"  for="edad">Edad: 
+                            <label class="d-flex align-items-center"  for="edad">Edad: 
                                 <input id="edad" class="text-center" type="text" size="28" placeholder="5">
                             </label>
                         </div>
-                        <div class="uploadMascota  d-flex flex-row">
+                        <div class="uploadMascota  d-flex flex-row flex-wrap">
                             <div class="inputFile">
                                 <p class="inputFileName"> Selecciona una Imagen</p>
                                 <button type="button" class="inputFileBtn">
@@ -83,10 +99,8 @@
             <i class="fa fa-whatsapp my-float"></i>
         </a>
         <footer class="d-flex flex-column align-items-center mb-0">
-            <p>Telefono: (011) 4585-4582
-                <span>Direccion: Rio de janeiro, Caballito, Buenos Aires
-                </span>
-            </p>
+            <p>Telefono: (011) 4585-4582</p>
+            <p>Direccion: Rio de janeiro, Caballito, Buenos Aires</p>
             <small>&copy;By Sofia Menichelli</small>
         </footer>
     </div>

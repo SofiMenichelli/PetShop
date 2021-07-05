@@ -56,7 +56,7 @@ const app = Vue.createApp ({
 })
 app.mount("#app")
 //Input File
-const mascotaInput = document.querySelector('#mascotaInput');
+/* const mascotaInput = document.querySelector('#mascotaInput');
 const mascotaName = document.querySelector('.inputFileName');
 const imagePreview = document.querySelector('.imgPrev');
 
@@ -71,4 +71,5 @@ mascotaInput.addEventListener('change', e=> {
         imgPrev.setAttribute('src', imageData);
     })
     fileReader.readAsDataURL(input.files[0]);
-})
+}) */
+
