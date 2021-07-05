@@ -9,6 +9,7 @@ const app = Vue.createApp ({
             ocultar: "Ocultar Descripción",
             isShow: true,
             carrito: [],
+            cantidad: 0,
         }
     },
     created() {
@@ -36,6 +37,11 @@ const app = Vue.createApp ({
                 } else {
                     alert("Disculpe no nos queda mas de este producto")
                 }
+                this.carrito.forEach(e => {
+                    if(e === medicamento) {
+                        this.cantidad += 1;
+                    }
+                })
             localStorage.setItem("carrito", JSON.stringify(this.carrito))
             /* console.log(this.carrito.concat(JSON.parse(localStorage.getItem("carrito")))) */
         },

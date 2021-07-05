@@ -30,8 +30,8 @@
                 <span></span>
                 <span></span>
             </a>
-            <nav class="d-flex m-5">
-                <ul class="">
+            <nav class="">
+                <div class="">
                     <a href="./index.html">Inicio</a>
                     <a href="./juguetes.html">Juguetes</a>
                     <a href="./farmacia.html">Farmacia</a>
@@ -39,25 +39,25 @@
                     <a class="navbar-brand" href="./carrito.html">
                         <img src="./img/carrito_vacio.png" width="50" height="50" alt="carrito">
                     </a>
-                </ul>
+                </div>
             </nav>
         </header>   
         <main>
-            <div id="carrito">
-                <table v-show="carrito.length > 0">
+            <div id="carrito" v-show="carrito.length > 0">
+                <table>
                     <!-- <h6 v-show="carrito.length > 0">Productos en Carrito de Compras</h6> -->
                     <thead >
                         <tr>
-                            <th colspan="2">Nombre</th>
-                            <th>Cantidad</th>
-                            <th>Precio</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr  v-for="item in carrito">
+                        <tr v-for="item in carrito" class="d-flex flex-column align-items-center">
                             <td><img :src="item.imagen" alt=""></td>
                             <td>{{item.nombre}}</td>
-                            <td>{{}}</td>
+                            <td>{{cantidad}}</td>
                             <td>${{item.precio}}</td>
                         </tr>
                     </tbody>
@@ -76,6 +76,8 @@
                         <button class="btn" :disabled="juguete.stock === 0" @click="agregarCarritoJ(juguete)">
                             <!-- 		the Price -->
                             <span class="price">${{juguete.precio}}</span>
+                            <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+
                             <!-- 		Buy Now / ADD to Cart-->
                             <span class="buy">Agregar al Carrito</span>
                         </button>
@@ -99,12 +101,21 @@
             target="_blank">
             <i class="fa fa-whatsapp my-float"></i>
         </a>
-        <footer class="d-flex flex-column align-items-center">
-            <p>Telefono: (011) 4585-4582
-                <span>Direccion: Rio de janeiro, Caballito, Buenos Aires
-                </span>
-            </p>
-            <small>&copy; By Sofia Menichelli</small>
+        <footer class="d-flex flex-column m-0">
+            <div class="d-flex flex-row justify-content-between mt-5">
+                <div class="">
+                    <a href="./index.html">Inicio</a>
+                    <a href="./juguetes.html">Juguetes</a>
+                    <a href="./farmacia.html">Farmacia</a>
+                    <a href="./contacto.html">Contacto</a>
+        
+                </div>
+                <p>Telefono: (011) 4585-4582
+                    <span>Direccion: Rio de janeiro, Caballito, Buenos Aires
+                    </span>
+                </p>
+            </div>
+            <small class="align-self-center">&copy;By Sofia Menichelli</small>
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
